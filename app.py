@@ -6,7 +6,11 @@ from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
- 
+
+@app.route('/')
+def index():
+    return '✅ Backend is running successfully on Railway!'
+
 
 DB_NAME = "feedback.db"
 @app.route("/submit-feedback", methods=["POST"])
